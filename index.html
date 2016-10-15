@@ -7,6 +7,7 @@
        <link rel="stylesheet" type="text/css" href="grid.css">
        <link rel="stylesheet" type="text/css" href="styles.css">
        <script src="gridCreator.js"></script>
+       <script src="tilesetPanel.js"></script>
        <!--javascript taken from: -->
    </HEAD>
 <BODY>
@@ -26,10 +27,17 @@
             Number of Columns:<br>
             <input type="number" id="columns">
         </form>
+    
+ <button type="button" onclick="newTileset()">Create Tileset</button> 
 </div>
     
 <div id="createGrid">
     <button type="button" onclick="createGrid()">Create Map Grid</button>
+</div>
+    
+<div id="loadImages">
+    <button type="button" onclick="loadImages()">Load up the images</button>
+    
 </div>
 </BODY>
 </HTML>
