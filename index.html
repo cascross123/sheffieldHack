@@ -5,15 +5,31 @@
          Tile Map Editor
       </TITLE>
        <link rel="stylesheet" type="text/css" href="grid.css">
+       <link rel="stylesheet" type="text/css" href="styles.css">
        <script src="gridCreator.js"></script>
        <!--javascript taken from: -->
    </HEAD>
 <BODY>
-    <div id="createGrid">
-        
-   <button type="button" onclick="createGrid()">Create Map Grid</button> 
-        
-    </div>
+    
+<div id="settings">
 
+        <br>
+        <br>
+        <form>
+            <h4>Define Tile Size</h4>
+            Define tilesize:
+            <input type="checkbox" id="tilesize_yes">
+            <h4>Create Grid</h4>
+            Number of Rows:<br>
+            <input type="number" id="rows"><br>
+            <br>
+            Number of Columns:<br>
+            <input type="number" id="columns">
+        </form>
+</div>
+    
+<div id="createGrid">
+    <button type="button" onclick="createGrid()">Create Map Grid</button>
+</div>
 </BODY>
 </HTML>
