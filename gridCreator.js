@@ -56,7 +56,34 @@ function clickableGrid( rows, cols, callback ){
     return grid;
 }
 }
+// array of images
+var images = [];
     
+function loadImages(){
+    // Image factory
+var createImage = function(src, title) {
+  var img   = new Image();
+  img.src   = src;
+  img.alt   = title;
+  img.title = title;
+  return img; 
+};
+
+
+// push two images to the array
+images.push(createImage("background.png", "foo title"));
+images.push(createImage("wall.png", "bar title"));
+
+// output
+console.log(images);
+    for (var i =0; i < images.length; i++){
+        
+        images[i].src
+        console.log("image output", images[i].src)
+        
+        
+    }
+}
 function newTileset(){
     
     
@@ -80,12 +107,19 @@ document.body.appendChild(grid);
      
 function clickableGrid( rows, cols, callback ){
     var i=0;
+    console.log("this is the length:", images.length);
     var grid = document.createElement('tileset');
     grid.className = 'grid';
     for (var r=0;r<rows;++r){
         var tr = grid.appendChild(document.createElement('tr'));
         for (var c=0;c<cols;++c){
             var cell = tr.appendChild(document.createElement('td'));
+             
+            if (images[i] != null) {
+            cell.innerHTML = "<img src=\""+images[i].src+"\" alt=\"image\">";
+            }
+            i++;
+                 
             cell.addEventListener('click',(function(el,r,c,i){
                 return function(){
                     callback(el,r,c,i);
@@ -97,25 +131,3 @@ function clickableGrid( rows, cols, callback ){
     }
 }
 
-function loadImages(){
-    // Image factory
-var createImage = function(src, title) {
-  var img   = new Image();
-  img.src   = src;
-  img.alt   = title;
-  img.title = title;
-  return img; 
-};
-
-// array of images
-var images = [];
-
-// push two images to the array
-images.push(createImage("foo.jpg", "foo title"));
-images.push(createImage("bar.jpg", "bar title"));
-
-// output
-console.log(images);
-    
-    
-}
